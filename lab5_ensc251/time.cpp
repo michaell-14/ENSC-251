@@ -41,10 +41,12 @@ string time_converter(string time_24h){
          minute_0 = stoi(time_24h.substr(3,1)); // 3 is the starting index and 1 is the length of the substring
          minute_1 = stoi(time_24h.substr(4,1));
 
+    // check if inputs is valid
     } catch (invalid_argument&){
         throw TimeFormatMistake("Invalid time format. Please enter time in exact 24-hour notation (HH:MM).");
     }
 
+    // Check if the time is correct format
     if (hour < 0 || hour > 23 || minute_0 < 0 || minute_0 > 5 || minute_1 < 0 || minute_1 > 9){
         throw TimeFormatMistake("Invalid time format. Please enter time in exact 24-hour notation (HH:MM).");
     }
@@ -79,7 +81,7 @@ return time_12h;
 // Main program
 int main(){
     string again;
-    int a = 1;
+    int a = 1; //
 
     string time_24h;
 
